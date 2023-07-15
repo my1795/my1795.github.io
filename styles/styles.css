@@ -960,5 +960,7 @@ section {
     font-size: 4rem;
   }
 }
-
+.contact-form > .btn-con {
+  padding: 10px;
+}
 /*# sourceMappingURL=styles.css.map */

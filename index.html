@@ -272,7 +272,7 @@
                     <div class="left-contact">
                         <h4>Contact me here</h4>
                         <p>
-                            All of contact links are listed down below.
+                            All contact information is listed below.
                         </p>
                         <div class="contact-info">
                             <div class="contact-item">
@@ -281,7 +281,7 @@
                                     <span>Location</span>
                                 </div>
                                 <p>
-                                    : Istanbul, Turkey
+                                    Istanbul, Turkey
                                 </p>
                             </div>
                             <div class="contact-item">
@@ -290,7 +290,7 @@
                                     <span>Email</span>
                                 </div>
                                 <p>
-                                    <span>:myldrm1025@gmail.com</span>
+                                    myldrm1025@gmail.com
                                 </p>
                             </div>
                             <div class="contact-item">
@@ -299,7 +299,7 @@
                                     <span>Education</span>
                                 </div>
                                 <p>
-                                    <span>: Ozyegin University, CSE</span>
+                                    Ozyegin University, CSE
                                 </p>
                             </div>
                             <div class="contact-item">
@@ -308,7 +308,7 @@
                                     <span>Mobile Number</span>
                                 </div>
                                 <p>
-                                    <span>: +905546041722</span>
+                                    +905546041722
                                 </p>
                             </div>
                             <div class="contact-item">
@@ -317,7 +317,7 @@
                                     <span>Languages</span>
                                 </div>
                                 <p>
-                                    <span>: English, Turkish</span>
+                                    English, Turkish
                                 </p>
                             </div>
                         </div>
@@ -330,28 +330,35 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <div class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input type="text" required placeholder="YOUR NAME" id="name" name="name">
+                                <input type="email" required placeholder="YOUR EMAIL" id="email" name="email">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input type="text" required placeholder="ENTER SUBJECT" id="subject" name="subject">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea name="message" cols="15" rows="8" placeholder="Message Here..." required id="message"></textarea>
                             </div>
-                            <div class="submit-btn">
+                            <div class="btn-con">
                                 <a href="img/Mustafa-Yıldırım-Resume-2023.pdf" class="main-btn">
                                     <span class="btn-text">Download Resume</span>
                                     <span class="btn-icon"><i class="fas fa-download"></i></span>
                                 </a>
                             </div>
-                        </form>
+                            <div class="btn-con">
+                                <a href="#" onclick="sendEmail();" class="main-btn">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <div class="controls">
@@ -378,5 +385,19 @@
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+    <script>
+        function sendEmail() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+
+            var mailtoLink = 'mailto:your-email@example.com' +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+
+            window.location.href = mailtoLink;
+        }
+    </script>
 </body>
 </html>
